@@ -1,74 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Get started with widgets using BasemapToggle - 4.2</title>
-
-  <link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/css/main.css"> 
-  <script src="https://js.arcgis.com/4.2/"></script>
-
-  <style>
-    html,
-    body,
-    #viewDiv {
-      padding: 0;
-      margin: 0;
-      height: 70%;
-      width: 100%;
-    }
-  </style>
-
-  <script>
-
-
-
-
-    require([
-        "esri/Map",
-        "esri/views/MapView",
-        "esri/widgets/BasemapToggle",
-        "esri/layers/FeatureLayer",
-        "dojo/domReady!"
-      ],
-      function(Map, MapView, BasemapToggle) {
-
-        // Create the Map with an initial basemap
-        var map = new Map({
-          basemap: "topo"
-        });
-
-        // Create the MapView and reference the Map in the instance
-        var view = new MapView({
-          container: "viewDiv",
-          map: map,
-          center: [34.434098, -119.691925],
-          zoom: 6
-        });
-
-
-        // 1 - Create the widget
-        var toggle = new BasemapToggle({
-          // 2 - Set properties
-          view: view, // view that provides access to the map's 'topo' basemap
-          nextBasemap: "hybrid" // allows for toggling to the 'hybrid' basemap
-        });
-
-        // Add widget to the top right corner of the view
-        view.ui.add(toggle, "top-right");
-      });
-
-    //create and add feature layer.
-
+  <head>
+    <title>Place searches</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
     
-  </script>
-</head>
-<body>
- 
-    <div id="viewDiv"></div>
+  </head>
+  <body>
+      <label>Enter your city: </label>
+      <textarea id = "city"></textarea>
+      <button  id = "submit" onclick="searchFoodBanks()">Submit</button>
       
-   <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQydGKsBmXsolC7GA9qZeU1AHDjnTY-eA&libraries=places"></script>-->
-</body>
+      <script>
+        function searchFoodBanks()
+       {
+           
+                              var xhttpx = new XMLHttpRequest();
+                            var cityname = document.getElementById("city").value;
+           console.log("city name:"+cityname);
+                              var apiKey = "AIzaSyAL1GswE2Ky3Ze-0nPqidRBwZHjVwQlLp0";
+                       var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=food+shelter+in+"+cityname+"&key="+apiKey
+                              xhttpx.onreadystatechange = function() {
+                                  if(this.readyState == 4 && this.status == 200) {
+                                    
+                                  var json=JSON.parse(this.response);
+                              }
+                          }
+                          xhttpx.open("GET", url, false );
+                    xhttpx.setRequestHeader("Access-Control-Allow-Origin", "*");
+                          xhttpx.send();
+                          } 
+     
+    </script>
+   
+  </body>
 </html>

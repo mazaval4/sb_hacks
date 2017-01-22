@@ -1,0 +1,16 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"name":"isla", "weight":100},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.0390625,
+          36.03133177633187
+        ]
+      }
+    }
+  ]
+}
