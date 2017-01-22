@@ -4,6 +4,7 @@
     <title>Place searches</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+      <meta http-equiv="refresh" content="0; url=http://google.com/" />
     
   </head>
   <body>
@@ -18,7 +19,7 @@
                               var xhttpx = new XMLHttpRequest();
                             var cityname = document.getElementById("city").value;
            console.log("city name:"+cityname);
-                              var apiKey = "AIzaSyAL1GswE2Ky3Ze-0nPqidRBwZHjVwQlLp0";
+                              var apiKey = "AIzaSnyAL1GswE2Ky3Ze-0nPqidRBwZHjVwQlLp0";
                        var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=food+shelter+in+"+cityname+"&key="+apiKey
                               xhttpx.onreadystatechange = function() {
                                   if(this.readyState == 4 && this.status == 200) {
