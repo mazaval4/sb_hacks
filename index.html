@@ -1,73 +1,91 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Place searches</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <!--      <meta http-equiv="refresh" content="0; url=http://argisdev1989.maps.arcgis.com/apps/View/index.html?appid=717d4e934bac4f319d0b448b750aac17" />-->
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico" rel="stylesheet">
-
-</head>
-
-<body style="background-image:url(1-1-0.jpg);">
-    <div class="container" >
-        <br><br><br><br><br><br><br>
-        <center>
-
-
+   <head>
+      <title>Place searches</title>
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+      <meta charset="utf-8">
+      <!--      <meta http-equiv="refresh" content="0; url=http://argisdev1989.maps.arcgis.com/apps/View/index.html?appid=717d4e934bac4f319d0b448b750aac17" />-->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Raleway" rel="stylesheet">
+   </head>
+   <body style="background-image:url(1-1-0.jpg);">
+      <div class="container" >
+         <br><br><br><br><br><br><br>
+         <center>
             <div class="col-lg-12">
-                <h3 style="font-family: 'Pacifico', cursive; color:white">Enter City To Find Shelter Information</h3>
-                <div class="input-group">
-                    <span class="input-group-btn">
-        <button class="btn btn-default" type="button" onclick="searchFoodBanks()">Go!</button>
-      </span>
-                    <input id="city" type="text" class="form-control" placeholder="Santa Barbara" disabled>
-
-                </div>
-                <!-- /input-group -->
+               <h3 style="font-family: 'Pacifico', cursive; color:white">Enter City To Find Shelter Information</h3>
+               <div class="input-group">
+                  <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" onclick="searchFoodBanks()">Go!</button>
+                  </span>
+                  <input id="city" type="text" class="form-control" placeholder="Santa Barbara" disabled>
+               </div>
+               <!-- /input-group -->
             </div>
-            <!-- /.col-lg-6 -->
-
-
-
-
-
+             <br><br><br><br><br><br><br>
+             <h1 style="font-family: 'Pacifico', cursive; color:white;border-bottom: 2px solid white; width: 20%;">About us</h1>
+             <div class = "container" style="border: 1px solid white;height: 300px;width: 700px;vertical-align: middle; background:white;
+                                             border-radius: 25px;">
+                 <h3 style="color:#d15723">"Hunger is caused by poverty and inequality, not scarcity"</h3>
+                 <br>
+                 <p style="font-family: 'Raleway', sans-serif;">Hunger in America is a problem, so we here at Food For All aim to put a dent into the problem and try to solve it programatically. Our solution is this application. It is meant to portray the amount of food by weight that a local food shelter has. </p>
+                 <br>
+                 <p   style="font-family: 'Raleway', sans-serif;">Just enter in your city and you will be shown the amount of food that a food shelter has on a map. The size of the sandwich indicates about how much food the shelter has. The bigger the sandwich, the more food the shelter has. Click on the sandwich for an exact number of food by weight the shelter has</p>
+             </div>
+             <div class = "container">
+             <br>
+                 <h1 style="font-family: 'Pacifico', cursive; color:white;border-bottom: 2px solid white; width: 20%;">Special Thanks To</h1>
+                <img src = "esri_logo_2010_interim.gif">
+             </div>
+             <br>
+             <br>
+             <br>
+             <br>
+             
             <script>
-                function searchFoodBanks() {
-                    //this gets the name of food shelters within a certain city
-                    var xhttpx = new XMLHttpRequest();
-                    if (cityname == null) {
-                        cityname = document.getElementById("city").placeholder;
-                    } else {
-                        var cityname = document.getElementById("city").value;
-                    }
-
-                    var apiKey = "AIzaSnyAL1GswE2Ky3Ze-0nPqidRBwZHjVwQlLp0";
-                    var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=food+shelter+in+" + cityname + "&key=" + apiKey
-                    xhttpx.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-
-                            var json = JSON.parse(this.response);
-                            window.location = "http://argisdev1989.maps.arcgis.com/apps/View/index.html?appid=717d4e934bac4f319d0b448b750aac17";
-                        }
-                    }
-                    xhttpx.open("GET", url, false);
-                    xhttpx.setRequestHeader("Access-Control-Allow-Origin", "*");
-                    xhttpx.send();
-                }
+               function searchFoodBanks() {
+                   //this gets the name of food shelters within a certain city
+                   var xhttpx = new XMLHttpRequest();
+                   if (cityname == null) {
+                       cityname = document.getElementById("city").placeholder;
+                   } else {
+                       var cityname = document.getElementById("city").value;
+                   }
+               
+                   var apiKey = "AIzaSyAQydGKsBmXsolC7GA9qZeU1AHDjnTY-eA";
+                   var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=food+shelter+in+" + cityname + "&key=" + apiKey;
+                   xhttpx.onreadystatechange = function() {
+                       if (this.readyState == 4 && this.status == 200) {
+               
+                           var json = JSON.parse(this.response);
+                           
+                           var results = json.results;
+                           console.log(results )
+                           
+                           for( x = 0; x <results.length;x++ )
+                               {
+                                   var address = results[x].formatted_address;
+                                   var lat = results[x].geometry.location.lat;
+                                   var long = results[x].geometry.location.lng;
+                                   
+                                   console.log(long)
+                                   
+                               }
+                           
+                           window.location = "http://argisdev1989.maps.arcgis.com/apps/View/index.html?appid=717d4e934bac4f319d0b448b750aac17";
+                       }
+                   }
+                   xhttpx.open("GET", url, false);
+                   xhttpx.send();
+               }
             </script>
-        </center>
-    </div>
-</body>
-
+         </center>
+      </div>
+   </body>
 </html>
+
