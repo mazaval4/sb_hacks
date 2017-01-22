@@ -1,40 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Place searches</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-      <meta http-equiv="refresh" content="0; url=http://argisdev1989.maps.arcgis.com/apps/View/index.html?appid=717d4e934bac4f319d0b448b750aac17" />
-    
-  </head>
-  <body>
-<!--
-      <label>Enter your city: </label>
-      <textarea id = "city"></textarea>
-      <button  id = "submit" onclick="searchFoodBanks()">Submit</button>
--->
-      
-      <script>
-        function searchFoodBanks()
-       {
-           //this gets the name of food shelters within a certain city
-                              var xhttpx = new XMLHttpRequest();
-                            var cityname = document.getElementById("city").value;
-           console.log("city name:"+cityname);
-                              var apiKey = "AIzaSnyAL1GswE2Ky3Ze-0nPqidRBwZHjVwQlLp0";
-                       var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=food+shelter+in+"+cityname+"&key="+apiKey
-                              xhttpx.onreadystatechange = function() {
-                                  if(this.readyState == 4 && this.status == 200) {
-                                    
-                                  var json=JSON.parse(this.response);
-                              }
-                          }
-                          xhttpx.open("GET", url, false );
+    <!--      <meta http-equiv="refresh" content="0; url=http://argisdev1989.maps.arcgis.com/apps/View/index.html?appid=717d4e934bac4f319d0b448b750aac17" />-->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico" rel="stylesheet">
+
+</head>
+
+<body style="background-image:url(1-1-0.jpg);">
+    <div class="container" >
+        <br><br><br><br><br><br><br>
+        <center>
+
+
+            <div class="col-lg-12">
+                <h3 style="font-family: 'Pacifico', cursive; color:white">Enter City To Find Shelter Information</h3>
+                <div class="input-group">
+                    <span class="input-group-btn">
+        <button class="btn btn-default" type="button" onclick="searchFoodBanks()">Go!</button>
+      </span>
+                    <input id="city" type="text" class="form-control" placeholder="Santa Barbara" disabled>
+
+                </div>
+                <!-- /input-group -->
+            </div>
+            <!-- /.col-lg-6 -->
+
+
+
+
+
+            <script>
+                function searchFoodBanks() {
+                    //this gets the name of food shelters within a certain city
+                    var xhttpx = new XMLHttpRequest();
+                    if (cityname == null) {
+                        cityname = document.getElementById("city").placeholder;
+                    } else {
+                        var cityname = document.getElementById("city").value;
+                    }
+
+                    var apiKey = "AIzaSnyAL1GswE2Ky3Ze-0nPqidRBwZHjVwQlLp0";
+                    var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=food+shelter+in+" + cityname + "&key=" + apiKey
+                    xhttpx.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+
+                            var json = JSON.parse(this.response);
+                            window.location = "http://argisdev1989.maps.arcgis.com/apps/View/index.html?appid=717d4e934bac4f319d0b448b750aac17";
+                        }
+                    }
+                    xhttpx.open("GET", url, false);
                     xhttpx.setRequestHeader("Access-Control-Allow-Origin", "*");
-                          xhttpx.send();
-                          } 
-     
-    </script>
-   
-  </body>
+                    xhttpx.send();
+                }
+            </script>
+        </center>
+    </div>
+</body>
+
 </html>

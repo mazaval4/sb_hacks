@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "features": [
-    {
+    { 
       "type": "Feature",
       "properties": {"name":"Food Bank-Santa Barbara", "Pounds of food left":100, "address":"4554 Hollister Ave, Santa Barbara, CA 93110, United States"},
       "geometry": {
@@ -12,7 +12,7 @@
         ]
       }
     },
-    {
+    { 
       "type": "Feature",
       "properties": {"name":"AS Food Bank", "Pounds of food left":5, "address":"Santa Barbara, CA 93106, United States"},
       "geometry": {
