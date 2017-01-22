@@ -6,8 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Get started with widgets using BasemapToggle - 4.2</title>
- 
- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
   <link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/css/main.css"> 
   <script src="https://js.arcgis.com/4.2/"></script>
 
@@ -26,79 +25,6 @@
 
 
 
-/*
-  var json = '[
-  {
-    "index": 0,
-    "name": "Place0",
-    "latitude": 34.412716,
-    "longitude": -119.705400,
-    "weight": 5	
-  },
-  {
-    "index": 1,
-    "name": "Place1",
-    "latitude": 34.426877,
-    "longitude": -119.671240,
-    "weight": 35
-  },
-  {
-    "index": 2,
-    "name": "Place2",
-    "latitude": 34.433532,
-    "longitude": -119.798784,
-    "weight": 25
-  },
-  {
-    "index": 3,
-    "name": "Place3",
-    "latitude": 34.432965,
-    "longitude": -119.886417,
-    "weight": 50
-  },
-  {
-    "index": 4,
-    "name": "Place4",
-    "latitude": 34.436363,
-    "longitude": -119.624977,
-    "weight": 5
-  },
-  {
-    "index": 5,
-    "name": "Place5",
-    "latitude": 34.398412,
-    "longitude": -119.477348,
-    "weight": 40
-  },
-  {
-    "index": 6,
-    "name": "Place6",
-    "latitude": 34.260622,
-    "longitude": -119.217453,
-    "weight": 30
-  },
-  {
-    "index": 7,
-    "name": "Place7",
-    "latitude": 34.495239,
-    "longitude": -119.277878,
-    "weight": 10
-  }
-]';
-*/
-function search(){
-            var geocoder =  new google.maps.Geocoder();
-            var city = document.getElementById("area").value;
-    geocoder.geocode( { 'address': city }, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            alert("location : " + results[0].geometry.location.lat() + " " +results[0].geometry.location.lng()); 
-          } else {
-            alert("Something got wrong " + status);
-          }
-        });
-};
-
-//code above gets lat long, now put lat long in google calls to get the food banks around the city
 
     require([
         "esri/Map",
@@ -140,13 +66,9 @@ function search(){
   </script>
 </head>
 <body>
-  <label>
-    Please enter your city:
-    </label>
-    <textArea id = "area"></textArea>
-    <input id="btn" type="button" value="search for miami coordinates" />
+ 
     <div id="viewDiv"></div>
-      <!-- test-->
+      
    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQydGKsBmXsolC7GA9qZeU1AHDjnTY-eA&libraries=places"></script>-->
 </body>
 </html>
