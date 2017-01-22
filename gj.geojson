@@ -3,12 +3,100 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {"name":"isla", "weight":100},
+      "properties": {"name":"Food Bank-Santa Barbara", "Pounds of food left":100, "address":"4554 Hollister Ave, Santa Barbara, CA 93110, United States"},
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -110.0390625,
-          36.03133177633187
+          -119.7774377,
+          34.4392612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name":"AS Food Bank", "Pounds of food left":5, "address":"Santa Barbara, CA 93106, United States"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.8477332,
+          34.4115036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name":"Foodbank of Santa Barbara County", "Pounds of food left":50, "address":"1525 State St, Santa Barbara, CA 93101, United States"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.70945,
+          34.42646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name":"Foodbank of Santa Barbara County", "Pounds of food left":25, "address":"490 W Foster Rd, Santa Maria, CA 93455, United States"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.4410699,
+          34.8822462
+        ]
+      }
+    },  
+    {
+      "type": "Feature",
+      "properties": {"name":"PATH - Santa Barbara", "Pounds of food left":15,"address":"816 Cacique Street, Santa Barbara, CA 93103, United States"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.676689,
+          34.418906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name":"Transition House", "Pounds of food left":30, "address":"425 E Cota St, Santa Barbara, CA 93101, United States"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.6915371 ,
+          34.4230247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name":"Unity Shoppe, Inc.", "Pounds of food left":60, "address":"110 W Sola St, Santa Barbara, CA 93101, United States"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.7052737,
+          34.4236476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name":"Salvation Army", "Pounds of food left":20, "address":"423 Chapala St, Santa Barbara, CA 93101, United States"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.6964487,
+          34.4152616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name":"Santa Barbara Rescue Mission", "Pounds of food left":35, "address":"535 E Yanonali St, Santa Barbara, CA 93103, United States"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.6846508,
+          34.4191744
         ]
       }
     }
