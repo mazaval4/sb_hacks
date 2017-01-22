@@ -72,12 +72,11 @@
                                    var address = results[x].formatted_address;
                                    var lat = results[x].geometry.location.lat;
                                    var long = results[x].geometry.location.lng;
-                                   
-                                   console.log(long)
-                                   
+                                   var weight = Math.floor((Math.random() * 100) + 1);
+                                   //here is where you make the json object and make the file.
                                }
                            
-                           window.location = "http://argisdev1989.maps.arcgis.com/apps/View/index.html?appid=717d4e934bac4f319d0b448b750aac17";
+                          // window.location = "http://argisdev1989.maps.arcgis.com/apps/View/index.html?appid=717d4e934bac4f319d0b448b750aac17";
                        }
                    }
                    xhttpx.open("GET", url, false);
